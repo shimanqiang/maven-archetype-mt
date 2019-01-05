@@ -10,12 +10,12 @@ import org.apache.ibatis.annotations.Select;
  * @author shimanqiang
  * @since 2019/1/1 下午8:29
  */
+@DataSourceAware("dataSourceOrder")
 public interface TestMapper {
 
     /**
      * 通过id 查看详情
      */
-    @DataSourceAware("dataSourceOrder")
     @Select("SELECT * FROM test WHERE id = #{id}")
     Test findById(@Param("id") int id);
 
